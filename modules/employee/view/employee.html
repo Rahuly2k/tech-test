@@ -1,0 +1,35 @@
+<h3>Search Here</h3>
+<div class="col-md-12">
+    <div class="col-md-2">
+        <input type="text" placeholder="Search" ng-model="emp_search" class="form-control" >
+    </div>
+</div>
+
+<h3>Employee Table</h3>
+
+<button class="add_btn" ng-click="add_new_clicked()">ADD NEW</button>
+
+<div>
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Address 1</th>
+            <th>Address 2</th>
+            <th>Postal Code</th>
+            <th>Edit</th>
+        </tr>
+        <tr ng-repeat="e in emp_json_data | filter: emp_search">
+            <td>{{e.id}}</td>
+            <td>{{e.name}}</td>
+            <td>{{e.phone}}</td>
+            <td>{{e.address.city}}</td>
+            <td>{{e.address.address_line1}}</td>
+            <td>{{e.address.address_line2}}</td>
+            <td>{{e.address.postal_code}}</td>
+            <td ng-click="edit_click_function(e)">Edit</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,43 @@
+<div class="container">
+    <h3> ADD NEW EMPLOYEE</h3>
+        <form name="empForm">
+                <div class="form-group">
+                  <label for="name"></label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" ng-model="add_emp.name" ng-minlength="4" >
+                  <div ng-messages="empForm.name.$error">
+                        <p ng-message="minlength">Your name is too short.</p>
+                        <p ng-message="maxlength">Your name is too long.</p>
+                        <p ng-message="required">Your name is required.</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone"></label>
+                    <input type="text" class="form-control" id="phone" name="phone"  placeholder="Enter Phone"  ng-model="add_emp.phone" ng-pattern="/^[0-9]{10,10}$/">
+                    <span ng-show="empForm.phone.$error.pattern">Please enter valid number!</span>
+                </div>
+                <div class="form-group">
+                    <label for="city"></label>
+                    <input type="text" class="form-control" id="city" placeholder="Enter City" ng-model="add_emp.address.city">
+                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                </div>
+                <div class="form-group">
+                    <label for="add1"></label>
+                    <input type="text" class="form-control" id="add1"  placeholder="Address 1" ng-model="add_emp.address.address_line1">
+                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                </div>
+                <div class="form-group">
+                    <label for="add2"></label>
+                    <input type="text" class="form-control" id="add2" placeholder="Address 1" ng-model="add_emp.address.address_line2">
+                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                </div>
+                <div class="form-group">
+                    <label for="postal"></label>
+                    <input type="text" class="form-control" id="postal" placeholder="Postal Code"  ng-model="add_emp.address.postal_code">
+                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                </div>                
+
+                <button type="submit" class="btn btn-primary" ng-click="add_emp_function()" ng-hide="add">Add</button>
+                <button type="submit" class="btn btn-primary" ng-click="edit_emp_function()" ng-show="edit">Edit</button>
+        </form>
+</div>
+

@@ -1,3 +1,6 @@
+/* create single controller for all action. we can also create multiple controllers for each action and use service to set and transfer data  */
+
+
 var homeModule = angular.module('empModule',[]);
 
 homeModule.controller('empController',['$scope','$location','$routeParams',function($scope,$location,$routeParams){
